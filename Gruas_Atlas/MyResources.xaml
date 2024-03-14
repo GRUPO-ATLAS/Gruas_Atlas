@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--Strings Generales-->
+    <x:String x:Key="ubicacion_matriz">Ubicación Matriz</x:String>
+    <x:String x:Key="usuario">Usuario</x:String>
+    <x:String x:Key="contrasena">Contraseña</x:String>
+    <x:String x:Key="ingresar">Ingresar</x:String>
+    <x:String x:Key="cancelar">Cancelar</x:String>
+    <x:String x:Key="nombre_empleado">Nombre Empleado</x:String>
+    <x:String x:Key="cedula_empleado">Cédula Empleado</x:String>
+    <x:String x:Key="registrar_consumo">Registrar Consumo</x:String>
+    <x:String x:Key="valor">Valor</x:String>
+    <x:String x:Key="rubro">Rubro</x:String>
+    <x:String x:Key="observaciones">Observaciones</x:String>
+    <x:String x:Key="actualizar_eliminar_consumos">Actualizr y Eliminar Consumos</x:String>
+    <x:String x:Key="id_proveedor">ID Proveedor</x:String>
+    <x:String x:Key="id_empleado">ID Empleado</x:String>
+    <x:String x:Key="actualizar">Actualizar</x:String>
+    <x:String x:Key="eliminar">Eliminar</x:String>
+    <x:String x:Key="pregunta_eliminar">¿Esta seguro que quiere eliminar?</x:String>
+    <x:String x:Key="ingrese_observaciones">Ingrese Observaciones</x:String>
+    <x:String x:Key="aceptar">Aceptar</x:String>
+    <x:String x:Key="seleccionar_opcion">Seleccione una opción</x:String>
+              
+    <!--Strings Login-->
+    <x:String x:Key="iniciar_sesion">Iniciar Sesión</x:String>
+    <x:String x:Key="cerrar_sesion">Cerrar Sesión</x:String>
+        
+    <!--Strings Hospedaje-->
+    <x:String x:Key="registro_hospedaje">Registro de Hospedaje</x:String>
+    <x:String x:Key="consumos_hospedaje">Consumos de Hospedaje</x:String>
+    <x:String x:Key="dias_hospedado">Días Hospedado</x:String>
+    <x:String x:Key="fecha_ingreso">Fecha Ingreso</x:String>
+    <x:String x:Key="fecha_salida">Fecha Salida</x:String>
+    <x:String x:Key="hospedaje">Hospedaje</x:String>
+    
+    <!--Strings Alimentacion-->
+    <x:String x:Key="registro_alimentacion">Registro de Alimentación</x:String>
+    <x:String x:Key="consumos_alimentacion">Consumos de Alimentación</x:String>
+    <x:String x:Key="tipo_alimentacion">Tipo Alimentación</x:String>
+    <x:String x:Key="fecha_consumo">Fecha Consumo</x:String>
+    <x:String x:Key="alimentacion">Alimentación</x:String>
+
+    <!--Estilos-->
+    <Style x:Key="Button" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource VerdeBoton}" />
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="ButtonPantallas" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource VerdeGA}" />
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="TituloPantalla" TargetType="Label">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextTransform" Value="Uppercase"/>
+    </Style>
+
+    <Style x:Key="Label" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+
+    <Style x:Key="LabelInsertar" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="Padding" Value="5,10,0,0"/>
+    </Style>
+
+    <Style x:Key="LabelBold" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="LabelConsumosBDD" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <Style x:Key="LabelPopUp" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="LabelConsumos" TargetType="Label">
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="Inputs" TargetType="Entry">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="PlaceholderColor" Value="Gray"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+
+    <Style x:Key="InputsEditor" TargetType="Editor">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="PlaceholderColor" Value="Gray"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HeightRequest" Value="150"/>
+    </Style>
+
+    <Style x:Key="ListasConsumos" TargetType="ListView">
+        <Setter Property="HasUnevenRows" Value="True"/>
+        <Setter Property="Margin" Value="12,0,12,12"/>
+    </Style>
+
+    <Style x:Key="GridConsumos" TargetType="Grid">
+        <Setter Property="RowSpacing" Value="0"/>
+        <Setter Property="ColumnSpacing" Value="0"/>
+    </Style>
+
+    <Style x:Key="FramesConsumos" TargetType="Frame">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource VerdeGA}"/>
+        <Setter Property="BorderColor" Value="Black"/>
+        <Setter Property="HasShadow" Value="True"/>
+    </Style>
+
+    <Style x:Key="FramesConsumosBDD" TargetType="Frame">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="BorderColor" Value="Black"/>
+        <Setter Property="HasShadow" Value="True"/>
+    </Style>
+
+    <Style x:Key="Popupform" TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HeightRequest" Value="150"/>
+    </Style>
+
+    <Style x:Key="DatePicker" TargetType="DatePicker">
+        <Setter Property="Format" Value="dd/MM/yyyy"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+        
+    <!--Combobox-->
+    <x:Array x:Key="tipo_a" Type="{x:Type x:String}">
+        <x:String>Desayuno</x:String>
+        <x:String>Almuerzo</x:String>
+        <x:String>Merienda</x:String>
+    </x:Array>
+
+    <!--Colores-->
+    <Color x:Key="VerdeBoton">#22AF6E</Color>
+    <Color x:Key="VerdeGA">#15904C</Color>
+</ResourceDictionary>

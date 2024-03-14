@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gruas_Atlas.Insertar_alimentacion"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text=" " />
+
+            <Label Text="{StaticResource registro_alimentacion}"  
+                  Style="{StaticResource TituloPantalla}"
+            />
+            <Entry x:Name="txtid" 
+                  IsVisible="false"
+            />
+
+            <Entry x:Name="txtCedulaEmpleado" 
+                   Placeholder="{StaticResource cedula_empleado}"
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Entry x:Name="txtNombreEmpleado" 
+                   Placeholder="{StaticResource nombre_empleado}" 
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="{StaticResource tipo_alimentacion}" 
+                       Grid.Row="0" 
+                       Grid.Column="0"
+                       Style="{StaticResource LabelInsertar}"
+                 />
+                <Picker x:Name="picker_alimentacion"
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                        Title="{StaticResource seleccionar_opcion}"
+                        VerticalOptions="CenterAndExpand"
+                        ItemsSource="{StaticResource tipo_a}"
+                 />
+
+                <Label Text="{StaticResource fecha_consumo}" 
+                       Grid.Row="1" 
+                       Grid.Column="0"
+                       Style="{StaticResource LabelInsertar}"
+                 />
+                <DatePicker x:Name="txtFechaconsumo"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Style="{StaticResource DatePicker}"
+                 />
+
+                <Label Text="{StaticResource rubro}" 
+                       Grid.Row="2" 
+                       Grid.Column="0"
+                       Style="{StaticResource LabelInsertar}"
+                 />
+                <Entry x:Name="txtRubro" 
+                       Grid.Row="2" 
+                       Grid.Column="1" 
+                       Text="{StaticResource alimentacion}" 
+                       IsReadOnly="True"
+                       Style="{StaticResource Inputs}"
+                 />
+
+                <Label Text="{StaticResource valor}" 
+                       Grid.Row="3" 
+                       Grid.Column="0"
+                       Style="{StaticResource LabelInsertar}"
+                 />
+                <Entry x:Name="txtValor" 
+                       Placeholder="{StaticResource valor}" 
+                       Keyboard="Numeric" 
+                       Grid.Row="3" 
+                       Grid.Column="1" 
+                       Style="{StaticResource Inputs}"
+                 />
+
+            </Grid>
+
+            <Editor x:Name="txtObservacion" 
+                  Placeholder="{StaticResource ingrese_observaciones}" 
+                  MaxLength="1000"
+                  Style="{StaticResource InputsEditor}"
+             />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="{StaticResource id_proveedor}" 
+                       Grid.Row="0" 
+                       Grid.Column="0"
+                       Style="{StaticResource LabelInsertar}"
+                 />
+                <Entry x:Name="txtidProveedores" 
+                       Grid.Row="0" 
+                       Grid.Column="1" 
+                       IsReadOnly="True"
+                       Style="{StaticResource Inputs}"
+                 />
+
+                <Label Text="{StaticResource id_empleado}" 
+                       Grid.Row="1" 
+                       Grid.Column="0"
+                       Style="{StaticResource LabelInsertar}"
+                 />
+                <Entry x:Name="txtidEmpleado" 
+                       Grid.Row="1" 
+                       Grid.Column="1" 
+                       Placeholder="{StaticResource id_empleado}" 
+                       IsPassword="True" 
+                       Keyboard="Numeric"
+                       Style="{StaticResource Inputs}"
+                 />
+            </Grid>
+
+            <Button x:Name="btnRegistrar" 
+                    Text="{StaticResource registrar_consumo}" 
+                    Style="{StaticResource ButtonPantallas}"
+                    Margin="15"
+                    Clicked="BtnRegistrar_Clicked"
+             />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

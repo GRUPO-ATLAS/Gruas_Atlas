@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gruas_Atlas.Act_Eli_Alimentacion">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="12">
+           
+            <Label Text="{StaticResource actualizar_eliminar_consumos}"
+                       Style="{StaticResource TituloPantalla}"      
+             />
+
+            <Entry x:Name="txtId" 
+                       IsReadOnly="True"
+                       Style="{StaticResource Inputs}"
+             />
+
+            <Label Text="{StaticResource cedula_empleado}" 
+                    Style="{StaticResource LabelBold}"      
+             />
+            <Entry x:Name="txtCedulaEmpleado"
+                   IsReadOnly="True"
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Label Text="{StaticResource nombre_empleado}" 
+                   Style="{StaticResource LabelBold}"
+             />
+            <Entry x:Name="txtNombreEmpleado"
+                   IsReadOnly="True"
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Label Text="{StaticResource tipo_alimentacion}" 
+                       Style="{StaticResource LabelBold}"
+             />
+            <Entry x:Name="txtTipoAlimentacion" 
+                       IsReadOnly="True" 
+                       Style="{StaticResource Inputs}"
+             />
+
+            <Label Text="{StaticResource fecha_consumo}"
+                   Style="{StaticResource LabelBold}"
+             />
+            <Entry x:Name="txtFechaconsumo" 
+                   IsReadOnly="True"
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Label Text="{StaticResource valor}"
+                   Style="{StaticResource LabelBold}"
+             />
+            <Entry x:Name="txtValorC" 
+                   IsReadOnly="True"
+                   Keyboard="Numeric" 
+                   Style="{StaticResource Inputs}"
+             />
+            
+            <Label Text="{StaticResource rubro}" 
+                   Style="{StaticResource LabelBold}"
+             />
+            <Entry x:Name="txtRubro"
+                   IsReadOnly="True"
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Label Text="{StaticResource observaciones}"
+                   Style="{StaticResource LabelBold}"
+             />
+            <Editor x:Name="txtObservacion"
+                    Style="{StaticResource InputsEditor}"
+             />
+
+            <Label Text="{StaticResource id_proveedor}"
+                   Style="{StaticResource LabelBold}"
+             />
+            <Entry x:Name="txtidProveedor" 
+                   IsReadOnly="True" 
+                   Style="{StaticResource Inputs}"
+             />
+
+            <Entry x:Name="txtidEmpleado"
+                   IsPassword="True"
+                   IsVisible="False"
+                   Style="{StaticResource Inputs}"
+             />
+
+                <Grid Padding="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnActualizar"
+                        Text="{StaticResource actualizar}"
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                        Style="{StaticResource ButtonPantallas}"
+                        Clicked="btnActualizar_Clicked"
+                 />
+                    <Button x:Name="btnEliminar"
+                        Text="{StaticResource eliminar}"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource ButtonPantallas}"
+                        Clicked="btnEliminar_Clicked"
+                 />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

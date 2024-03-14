@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gruas_Atlas.Login">
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="{StaticResource VerdeGA}">
+            <Frame BackgroundColor="White" CornerRadius="15" TranslationY="100">
+                <StackLayout VerticalOptions="Center">
+
+                    <Image Source="GAr.png"/>
+
+                    <Label Text=" "/>
+
+                    <Label Text="{StaticResource iniciar_sesion}" 
+                           Style="{StaticResource TituloPantalla}"
+                     />
+
+                    <Label Text="{StaticResource usuario}" 
+                           Style="{StaticResource Label}"
+                     />
+                    <Entry x:Name="txtUsuario" 
+                           Placeholder="{StaticResource usuario}" 
+                           Text="{Binding nombre}" 
+                           Style="{StaticResource Inputs}"
+                     />
+
+                    <Label Text="{StaticResource contrasena}"
+                           Style="{StaticResource Label}"      
+                     />
+                    <Entry x:Name="txtContraseña" 
+                           Placeholder="{StaticResource contrasena}"
+                           IsPassword="True" 
+                           Text="{Binding contrasena}"
+                           Style="{StaticResource Inputs}"
+                     />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnIngresar" 
+                                Clicked="btnIngresar_Clicked" 
+                                Text="{StaticResource ingresar}"  
+                                Grid.Row="0" 
+                                Grid.Column="0" 
+                                Style="{StaticResource Button}"
+                         />
+                        <Button x:Name="btnCancelar" 
+                                Text="{StaticResource cancelar}" 
+                                Clicked="btnCancelar_Clicked"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Style="{StaticResource Button}"
+                         />
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

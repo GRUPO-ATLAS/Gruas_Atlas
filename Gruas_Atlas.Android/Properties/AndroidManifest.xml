@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="5" android:versionName="5.0" package="com.companyname.gruas_atlas" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="26" android:targetSdkVersion="33" />
+	<application android:label="Gruas Atlas" android:theme="@style/MainTheme" android:usesCleartextTraffic="true" android:icon="@drawable/GAr"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.BIND_TELECOM_CONNECTION_SERVICE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+</manifest>

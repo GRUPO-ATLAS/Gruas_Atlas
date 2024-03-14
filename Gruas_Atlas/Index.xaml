@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gruas_Atlas.Index" NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="ATLAS_Mesa.png" HeightRequest="180" Margin="0" HorizontalOptions="Start"
+                   />
+            <!-- Controles flotantes -->
+
+            <Button x:Name="btnIniciar" 
+                    Text="{StaticResource iniciar_sesion}" 
+                    Clicked="btnIniciar_Clicked"
+                    AbsoluteLayout.LayoutBounds="0.5,0.45,200,40"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Style="{StaticResource Button}"
+            />
+
+            <!-- <Button x:Name="btnRegistrar" Text="Registrarse" Clicked="btnRegistrar_Clicked" -->
+            <!--AbsoluteLayout.LayoutBounds="0.5,0.58,200,40" -->
+            <!--AbsoluteLayout.LayoutFlags="PositionProportional" Style="{StaticResource ButtonStyle}"/> -->
+
+            <Button x:Name="btnComollegar" 
+                    Text="{StaticResource ubicacion_matriz}"
+                    AbsoluteLayout.LayoutBounds="0.5,0.58,200,40"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Style="{StaticResource Button}"
+            />
+
+            <Image Source="certificados.png" Margin="0"
+                   HeightRequest="150" WidthRequest="375"
+                   AbsoluteLayout.LayoutBounds="0.5,1"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+            />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

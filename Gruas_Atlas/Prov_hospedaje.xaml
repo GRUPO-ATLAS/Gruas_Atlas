@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gruas_Atlas.Prov_hospedaje"
+             BackgroundColor="White"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text=" "/>
+
+            <Label Text="{StaticResource consumos_hospedaje}" 
+                   Style="{StaticResource TituloPantalla}"      
+             />
+
+            <Label Text=" "/>
+            
+            <Grid Grid.Row="1" Margin="12,0,12,0">
+                <Grid.RowDefinitions >
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnatras" 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        Text="{StaticResource cerrar_sesion}"
+                        Style="{StaticResource ButtonPantallas}"
+                        Clicked="btnatras_Clicked"
+                 />
+                <Button x:Name="btnInsertar" 
+                        Grid.Row="0" 
+                        Grid.Column="1"  
+                        Text="{StaticResource registrar_consumo}" 
+                        Style="{StaticResource ButtonPantallas}"
+                        Clicked="btnInsertar_Clicked"
+                 />
+            </Grid>
+            
+            <Label Text=" "/>
+
+            <ListView x:Name="ListaResultados" 
+                      ItemSelected="ListaResultados_ItemSelected"
+                      Style="{StaticResource ListasConsumos}"
+             >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="0,0,0,24">
+                                <Grid Grid.Row="1" 
+                                      Style="{StaticResource GridConsumos}"
+                                 >
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Aquí agregamos los datos estaticos de titulo -->
+
+                                    <Label TextColor="White" Text="id"  IsVisible="false" />
+
+                                    <Frame Grid.ColumnSpan="2" 
+                                           Grid.Row="0" 
+                                           Grid.Column="0"
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource nombre_empleado}" 
+                                               Style="{StaticResource LabelConsumos}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="2" 
+                                           Grid.Column="0"
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource cedula_empleado}" 
+                                               Style="{StaticResource LabelConsumos}"      
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="3" 
+                                           Grid.Column="0" 
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource dias_hospedado}" 
+                                               Style="{StaticResource LabelConsumos}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="4" 
+                                           Grid.Column="0"
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource valor}" 
+                                               Style="{StaticResource LabelConsumos}"      
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="5" 
+                                           Grid.Column="0" 
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource rubro}" 
+                                               Style="{StaticResource LabelConsumos}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="6" 
+                                           Grid.Column="0"
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource fecha_ingreso}" 
+                                               Style="{StaticResource LabelConsumos}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="7" 
+                                           Grid.Column="0" 
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource fecha_salida}" 
+                                               Style="{StaticResource LabelConsumos}"      
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="8" 
+                                           Grid.Column="0" 
+                                           Grid.ColumnSpan="2" 
+                                           Style="{StaticResource FramesConsumos}"
+                                     >
+                                        <Label Text="{StaticResource observaciones}" 
+                                               Style="{StaticResource LabelConsumos}"
+                                         />
+                                    </Frame>
+
+                                    <Label TextColor="White" Text="idProveedor"  IsVisible="false" />
+                                    
+                                    <!-- Aquí agregamos los datos de resultado de la abase de datos -->
+
+                                    <Label TextColor="White" Text="{Binding idHosp}"  IsVisible="false" />
+
+                                    <Frame Grid.Row="2" 
+                                           Grid.Column="1"
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding cedEmple}" 
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="1" 
+                                           Grid.Column="0" 
+                                           Grid.ColumnSpan="2"
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding nomEmple}"  
+                                               Style="{StaticResource LabelConsumosBDD}"      
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="3" 
+                                           Grid.Column="1"
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding diasH}" 
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="4" 
+                                           Grid.Column="1"
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding valorC}"
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="5" 
+                                           Grid.Column="1" 
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding rubro}"
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="6" 
+                                           Grid.Column="1" 
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding fecIn}" 
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="7" 
+                                           Grid.Column="1"
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding fecSa}"
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Frame Grid.Row="9" 
+                                           Grid.Column="0" 
+                                           Grid.ColumnSpan="2"
+                                           Style="{StaticResource FramesConsumosBDD}"
+                                     >
+                                        <Label Text="{Binding obser}" 
+                                               Style="{StaticResource LabelConsumosBDD}"
+                                         />
+                                    </Frame>
+
+                                    <Label TextColor="White" Text="{Binding idProve}"  IsVisible="false" />
+                                    <Label TextColor="White" Text="{Binding idEmple}"  IsVisible="false" />
+
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gruas_Atlas.Registro">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label x:Name="lbUsuario" FontSize="14" TextColor="red" HorizontalTextAlignment="End" />
+                <Label Text="REGISTRO DE CONSUMO" FontSize="30" HorizontalTextAlignment="Center"/>
+
+                <Picker x:Name="pkTipoServicio" Title="Tipo de Servicio" SelectedIndexChanged="pkTipoServicio_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Alimentación</x:String>
+                        <x:String>Hospedaje</x:String>
+                        <x:String>Hospedaje y Alimentación</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            <!-- Alimentación -->
+                <StackLayout x:Name="alimentacionLayout" IsVisible="false">
+                    <Entry x:Name="txtCedula" Text="{Binding cedulaEmpleado}" Placeholder="Cédula del empleado" Keyboard="Numeric" />
+                    <Entry x:Name="txtnombreEmpleado" Text="{Binding nombreEmpleado}" Placeholder="Nombre del empleado" IsEnabled="False"/>
+                    <Picker Title="Tipo de alimentación">
+                        <Picker.Items>                        
+                            <x:String>Desayuno</x:String>
+                            <x:String>Almuerzo</x:String>
+                            <x:String>Merienda</x:String>
+                            <x:String>Desayuno-Almuerzo-Merienda</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker x:Name="pkfecha" Grid.Row="0" Grid.Column="0"/>
+                        <TimePicker x:Name="pkhora" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+
+                    <Entry Placeholder="Valor" Keyboard="Numeric"/>
+                    <Editor Placeholder="Ingrese sus observaciones" MaxLength="1000" HeightRequest="150"  />
+                </StackLayout>
+            
+                <!-- Hospedaje -->
+                <StackLayout x:Name="hospedajeLayout" IsVisible="false">                    
+                    <Entry Placeholder="Cédula del empleado" />
+                    <Entry Placeholder="Nombre del empleado" IsEnabled="False"/>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker x:Name="fechaDesdePicker" Grid.Row="0" Grid.Column="0" />
+                        <TimePicker x:Name="horaDesdePicker" Grid.Row="0" Grid.Column="1"/>
+                        <DatePicker x:Name="fechaHastaPicker" Grid.Row="1" Grid.Column="0"/>
+                        <TimePicker x:Name="horaHastaPicker" Grid.Row="1" Grid.Column="1" />
+                    </Grid>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Placeholder="Diás Hospedaje" IsEnabled="False" Grid.Row="0" Grid.Column="0"/>
+                        <Entry Placeholder="Valor" Keyboard="Numeric" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+
+                    <Editor Placeholder="Ingrese sus observaciones" MaxLength="1000" HeightRequest="150" />
+                </StackLayout>
+
+                <!-- Hospedaje y Alimentación -->
+                <StackLayout x:Name="hospedajeAlimentacionLayout" IsVisible="false">
+                    <!-- Campos de alimentación -->
+                    <Entry Placeholder="Nombre Proveedor" />
+                    <Entry Placeholder="Cédula del empleado" />
+                    <Entry Placeholder="Nombre del empleado" IsEnabled="False"/>
+                    <Picker Title="Tipo de alimentación">
+                        <Picker.Items>                            
+                                <x:String>Desayuno</x:String>
+                                <x:String>Almuerzo</x:String>
+                                <x:String>Merienda</x:String>                           
+                        </Picker.Items>
+                    </Picker>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker x:Name="fecha1Picker" Grid.Row="0" Grid.Column="0"/>
+                        <TimePicker x:Name="hora1Picker" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+
+                    <Entry Placeholder="Valor" Keyboard="Numeric"/>
+
+                    <!-- Campos de hospedaje -->
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker x:Name="fecha1DesdePicker" Grid.Row="0" Grid.Column="0"/>
+                        <TimePicker x:Name="hora1DesdePicker" Grid.Row="0" Grid.Column="1"/>
+                        <DatePicker x:Name="fecha1HastaPicker" Grid.Row="1" Grid.Column="0"/>
+                        <TimePicker x:Name="hora1HastaPicker" Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+
+                    <Entry Placeholder="Valor" Keyboard="Numeric"/>
+                    <Editor Placeholder="Ingrese sus observaciones" MaxLength="1000" HeightRequest="150" />
+                </StackLayout>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>                 
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnRegistrar" Text="REGISTRAR" Clicked="btnRegistrar_Clicked" Grid.Row="0" Grid.Column="0"/>
+                    <Button x:Name="btnCancelar" Text="CANCELAR" Clicked="btnCancelar_Clicked" Grid.Row="0" Grid.Column="1"/>
+                </Grid>                
+
+         </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
