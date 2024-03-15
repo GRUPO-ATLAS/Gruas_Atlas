@@ -30,7 +30,7 @@ namespace Gruas_Atlas
 			InitializeComponent ();
 		}
 
-        private async void BtnRegistrar_Clicked(object sender, EventArgs e)
+        private void BtnRegistrar_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -60,27 +60,29 @@ namespace Gruas_Atlas
 
                     if (respuestaString.Equals("\"Ok\""))
                     {
-                        await DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgRegConsumoExito, GlobalVariables.cerrar);
-                        await Navigation.PushAsync(new Prov_hospedaje(idPrv));
-                    }
+                        DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgRegConsumoExito, GlobalVariables.cerrar);
+                        Navigation.PushAsync(new Prov_hospedaje(idPrv));
+                        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 3]);
+                        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                        }
                     else
                     {
-                        await DisplayAlert(GlobalVariables.alerta,GlobalVariables.msgRegConsumoError, GlobalVariables.cerrar);
+                        DisplayAlert(GlobalVariables.alerta,GlobalVariables.msgRegConsumoError, GlobalVariables.cerrar);
                     }
                 }
                 else
                 {
-                    await DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgCedulaError, GlobalVariables.cerrar);
+                     DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgCedulaError, GlobalVariables.cerrar);
                 }
                 }
                 else {
-                    await DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgCamposVacios, GlobalVariables.cerrar);
+                     DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgCamposVacios, GlobalVariables.cerrar);
                 }
             }
             catch (Exception ex)
             {
                 Console.Write(ex);
-                await DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgRegConsumoError, GlobalVariables.cerrar);
+                DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgRegConsumoError, GlobalVariables.cerrar);
             }
         }
     }

@@ -66,7 +66,8 @@ namespace Gruas_Atlas
                 cliente.UploadValues(url, "PUT", parametros);
                 DisplayAlert(GlobalVariables.alerta, GlobalVariables.msgDatosActualizadosExito, GlobalVariables.cerrar);
                 Navigation.PushAsync(new Prov_alimentacion(idPrv));
-
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 3]);
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
             } catch (Exception ex) {
                 Console.Write(ex);
             }
@@ -112,6 +113,9 @@ namespace Gruas_Atlas
                 cliente.UploadValues(url, "DELETE", parametros);
                 DisplayAlert(GlobalVariables.alerta, GlobalVariables.datos_eliminados, GlobalVariables.cerrar);
                 Navigation.PushAsync(new Prov_alimentacion(idPrv));
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 3]);
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                
             }
             catch (Exception ex) {
                 DisplayAlert("Alerta", ex.Message, "Cerrar");
